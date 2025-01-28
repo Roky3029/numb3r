@@ -19,3 +19,7 @@ export const createMatrix = (
 
 	return matrix
 }
+
+export const calculateDeterminant = (values: number[][]) => {
+	return 0
+}

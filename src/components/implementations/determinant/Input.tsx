@@ -3,9 +3,16 @@ interface InputProps {
 	setValues: React.Dispatch<React.SetStateAction<number[][]>>
 	iValue: number
 	jValue: number
+	disabled?: boolean
 }
 
-const Input: React.FC<InputProps> = ({ values, setValues, iValue, jValue }) => {
+const Input: React.FC<InputProps> = ({
+	values,
+	setValues,
+	iValue,
+	jValue,
+	disabled
+}) => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const newMatrix = values.map(r => [...r])
 
@@ -20,10 +27,11 @@ const Input: React.FC<InputProps> = ({ values, setValues, iValue, jValue }) => {
 		<>
 			<input
 				type='number'
-				className='border-none ring-2 px-3 py-1 w-20 h-20 text-xl text-black text-center rounded-md'
+				className='border-none ring-2 px-3 py-1 w-20 h-20 text-xl text-black text-center rounded-md disabled:text-white disabled:placeholder:text-white'
 				value={values[iValue][jValue] !== 0 ? values[iValue][jValue] : ''}
 				placeholder={values[iValue][jValue] !== 0 ? '' : '0'}
 				onChange={e => handleChange(e)}
+				disabled={disabled}
 			/>
 		</>
 	)

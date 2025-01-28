@@ -2,14 +2,12 @@
 
 import Matrix from '@/components/implementations/determinant/Matrix'
 import { checkCategory } from '@/functions/checkCategory'
-import {
-	calculateDeterminant,
-	createMatrix
-} from '@/functions/matrix/determinant'
+import { createMatrix } from '@/functions/matrix/determinant'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { PARENTHESIS_SIZES } from '@/functions/matrix/parenthesisSizes'
 import PageTitle from '@/components/PageTitle'
+import { calculateTransposition } from '@/functions/matrix/transposition'
 
 export default function Determinant() {
 	const router = useRouter()
@@ -20,6 +18,7 @@ export default function Determinant() {
 		[0, 0, 0],
 		[0, 0, 0]
 	])
+	const [newMatrix, setNewMatrix] = useState<number[][]>([])
 
 	const path = usePathname().split('/')
 
@@ -35,6 +34,7 @@ export default function Determinant() {
 	if (!isAppFromCategory) router.push('/404')
 
 	const handleMatrixScalation = (scaling: string) => {
+		setNewMatrix([])
 		if ((size === 2 && scaling === '-') || (size === 5 && scaling === '+'))
 			return
 
@@ -51,16 +51,16 @@ export default function Determinant() {
 		setValues(newMat as number[][])
 	}
 
-	const handleDeterminantCalculation = () => {
-		console.log(values)
-		calculateDeterminant(values)
+	const handleTransposition = () => {
+		const transposed = calculateTransposition(values)
+		setNewMatrix(transposed)
 	}
 
 	return (
 		<>
 			<PageTitle
-				title='Matrix determinant'
-				subtitle='Calculate a matrix determinant of a matrix with a MxM size'
+				title='Transposition'
+				subtitle='Given a MxN size matrix, convert it to its transposed NxM matrix'
 			/>
 
 			<div className='flex items-center justify-center gap-10'>
@@ -79,16 +79,37 @@ export default function Determinant() {
 
 				<button
 					className='px-8 py-4 bg-slate-600 border-4 border-slate-800 transition-all hover:bg-slate-700 shadow-lg rounded-lg'
-					onClick={() => handleDeterminantCalculation()}
+					onClick={() => handleTransposition()}
 				>
 					Calculate
 				</button>
 			</div>
 
-			<div className='text-center flex items-center justify-center'>
-				<p className={`${PARENTHESIS_SIZES[size - 2]}`}>(</p>
-				<Matrix size={size} values={values} setValues={setValues} />
-				<p className={`${PARENTHESIS_SIZES[size - 2]}`}>)</p>
+			<div className='flex items-center justify-center gap-10'>
+				<div className='text-center flex items-center justify-center'>
+					<p className={`${PARENTHESIS_SIZES[size - 2]}`}>(</p>
+					<Matrix size={size} values={values} setValues={setValues} />
+					<p className={`${PARENTHESIS_SIZES[size - 2]}`}>)</p>
+				</div>
+
+				{newMatrix.length > 0 && newMatrix[0].length > 0 && (
+					<>
+						<p className='text-2xl'>
+							is converted into M<sup>T</sup>=
+						</p>
+
+						<div className='text-center flex items-center justify-center'>
+							<p className={`${PARENTHESIS_SIZES[size - 2]}`}>(</p>
+							<Matrix
+								size={size}
+								values={newMatrix}
+								setValues={setValues}
+								disabled={true}
+							/>
+							<p className={`${PARENTHESIS_SIZES[size - 2]}`}>)</p>
+						</div>
+					</>
+				)}
 			</div>
 		</>
 	)

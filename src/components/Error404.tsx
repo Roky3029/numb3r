@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import PageTitle from './PageTitle'
 
 const Error404 = () => {
 	return (
 		<section className='w-full flex flex-col items-center justify-center gap-10 text-xl'>
-			<h1 className='uppercase font-extrabold text-3xl'>Whoops!!</h1>
+			<PageTitle title='Whoops!!' />
 
 			<Image
 				alt='Laberinth image'

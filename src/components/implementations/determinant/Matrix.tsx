@@ -4,9 +4,15 @@ interface MatrixProps {
 	size: number
 	values: number[][]
 	setValues: React.Dispatch<React.SetStateAction<number[][]>>
+	disabled?: boolean
 }
 
-const Matrix: React.FC<MatrixProps> = ({ size, values, setValues }) => {
+const Matrix: React.FC<MatrixProps> = ({
+	size,
+	values,
+	setValues,
+	disabled
+}) => {
 	// const rows = [
 	// 	[1, 1, 1],
 	// 	[2, 2, 2],
@@ -24,6 +30,7 @@ const Matrix: React.FC<MatrixProps> = ({ size, values, setValues }) => {
 					setValues={setValues}
 					iValue={i}
 					jValue={j}
+					disabled={disabled}
 				/>
 			)
 		}
