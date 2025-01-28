@@ -3,7 +3,9 @@
 import Matrix from '@/components/implementations/determinant/Matrix'
 import { checkCategory } from '@/functions/checkCategory'
 import {
-	calculateDeterminant,
+	calculate2x2Determinant,
+	calculateNxNDeterminant,
+	checkForEmptyRows,
 	createMatrix
 } from '@/functions/matrix/determinant'
 import { usePathname, useRouter } from 'next/navigation'
@@ -16,10 +18,11 @@ export default function Determinant() {
 	const [isAppFromCategory, setIsAppFromCategory] = useState(true)
 	const [size, setSize] = useState(3)
 	const [values, setValues] = useState([
-		[0, 0, 0],
-		[0, 0, 0],
-		[0, 0, 0]
+		[3, 7, 0],
+		[0, 0, 12],
+		[0, 8, 11]
 	])
+	const [determinant, setDeterminant] = useState<number | undefined>(undefined)
 
 	const path = usePathname().split('/')
 
@@ -35,6 +38,7 @@ export default function Determinant() {
 	if (!isAppFromCategory) router.push('/404')
 
 	const handleMatrixScalation = (scaling: string) => {
+		setDeterminant(undefined)
 		if ((size === 2 && scaling === '-') || (size === 5 && scaling === '+'))
 			return
 
@@ -51,9 +55,18 @@ export default function Determinant() {
 		setValues(newMat as number[][])
 	}
 
+	useEffect(() => {
+		setDeterminant(undefined)
+	}, [values])
+
 	const handleDeterminantCalculation = () => {
-		console.log(values)
-		calculateDeterminant(values)
+		if (checkForEmptyRows(values)) return setDeterminant(0)
+		if (size == 2) {
+			setDeterminant(calculate2x2Determinant(values))
+			return
+		}
+		setDeterminant(calculateNxNDeterminant(values))
+		return
 	}
 
 	return (
@@ -86,9 +99,13 @@ export default function Determinant() {
 			</div>
 
 			<div className='text-center flex items-center justify-center'>
-				<p className={`${PARENTHESIS_SIZES[size - 2]}`}>(</p>
+				<p className={`${PARENTHESIS_SIZES[size - 2]}`}>|</p>
 				<Matrix size={size} values={values} setValues={setValues} />
-				<p className={`${PARENTHESIS_SIZES[size - 2]}`}>)</p>
+				<p className={`${PARENTHESIS_SIZES[size - 2]}`}>|</p>
+
+				{determinant !== undefined && (
+					<span className='text-4xl font-semibold'>= {determinant}</span>
+				)}
 			</div>
 		</>
 	)
