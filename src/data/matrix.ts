@@ -23,14 +23,14 @@ export const matrixApplications: ICategory = {
 			icon: TbSwitch
 		},
 		{
-			id: 'basic_arithmetic',
+			id: 'arithmetic_operations',
 			title: 'Arithmetic operations',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
 			icon: PiMathOperations
 		},
 		{
-			id: 'inverse',
+			id: 'inverse_matrix',
 			title: 'Inverse matrix',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',

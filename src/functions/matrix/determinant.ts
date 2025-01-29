@@ -97,7 +97,6 @@ export const calculateNxNDeterminant = (values: number[][]) => {
 		}
 
 		const adjointMatrix = reduceMatrix(newMatrix)
-		console.log(adjointMatrix)
 		// If i is odd, then we should add to the determinant the expression but negative, if it is odd then we just add it positive
 		determinant +=
 			calculateNxNDeterminant(adjointMatrix) * Math.pow(-1, i) * firstColElement

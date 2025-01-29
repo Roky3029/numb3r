@@ -26,12 +26,13 @@ const Input: React.FC<InputProps> = ({
 	return (
 		<>
 			<input
-				type='number'
+				type={typeof values[0][0] === 'string' ? 'text' : 'number'}
 				className='border-none ring-2 px-3 py-1 w-20 h-20 text-xl text-black text-center rounded-md disabled:text-white disabled:placeholder:text-white'
 				value={values[iValue][jValue]}
 				placeholder={values[iValue][jValue] !== 0 ? '' : '0'}
 				onChange={e => handleChange(e)}
 				disabled={disabled}
+				name={'matrix-input'}
 			/>
 		</>
 	)
