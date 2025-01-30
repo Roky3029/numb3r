@@ -26,9 +26,9 @@ const Input: React.FC<InputProps> = ({
 	return (
 		<>
 			<input
-				type={typeof values[0][0] === 'string' ? 'text' : 'number'}
+				type={'text'}
 				className='border-none ring-2 px-3 py-1 w-20 h-20 text-xl text-black text-center rounded-md disabled:text-white disabled:placeholder:text-white'
-				value={values[iValue][jValue]}
+				value={values[iValue][jValue].toString().replace(/(.+?)\/1\b/g, '$1')}
 				placeholder={values[iValue][jValue] !== 0 ? '' : '0'}
 				onChange={e => handleChange(e)}
 				disabled={disabled}

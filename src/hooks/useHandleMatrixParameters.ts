@@ -20,17 +20,28 @@ export const useHandleMatrixParameters = (): handler => {
 		if ((size === 2 && scaling === '-') || (size === 5 && scaling === '+'))
 			return
 
-		if (scaling === '-') {
-			setSize(size - 1)
+		// if (scaling === '-') {
+		// 	setSize(size - 1)
 
-			const newMat = createMatrix(size - 1, 0, values)
-			setValues(newMat as number[][])
-			return
-		} else if (scaling === '+') {
-			setSize(size + 1)
-			const newMat = createMatrix(size + 1, 0, values)
-			setValues(newMat as number[][])
-		}
+		// 	const newMat = createMatrix(size - 1, 0, values)
+		// 	setValues(newMat as number[][])
+		// 	return
+		// } else if (scaling === '+') {
+		// 	setSize(size + 1)
+		// 	const newMat = createMatrix(size + 1, 0, values)
+		// 	setValues(newMat as number[][])
+		// }
+
+		setSize(prevSize => {
+			const newSize = scaling === '+' ? prevSize + 1 : prevSize - 1
+
+			setValues(
+				prevValues =>
+					(createMatrix(newSize, 0, prevValues) as number[][]) || [[]]
+			)
+
+			return newSize // Aseguramos que el tamaño se actualiza correctamente
+		})
 	}
 
 	return [size, values, setValues, handleScalation]

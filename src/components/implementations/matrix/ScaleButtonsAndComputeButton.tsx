@@ -11,6 +11,7 @@ export default function ScaleButtonsAndComputeButton({
 }: ScaleButtonsAndComputeButtonProps) {
 	const handleMatrixScalation = (scaling: string) => {
 		if (additionalHandlingCode) additionalHandlingCode()
+
 		if (handleScalation) handleScalation(scaling)
 	}
 

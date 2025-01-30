@@ -7,6 +7,7 @@ import { useCheckApplication } from '@/functions/checkApplication'
 import { useHandleMatrixParameters } from '@/hooks/useHandleMatrixParameters'
 import { useEffect, useState } from 'react'
 import { ARITHMETICAL_OPERATIONS } from '@/functions/matrix/arithmeticalOperations'
+import Error from '@/components/Error'
 
 export default function Arithmetic() {
 	useCheckApplication()
@@ -18,7 +19,7 @@ export default function Arithmetic() {
 	const [resultingMatrix, setResultingMatrix] = useState<
 		number[][] | undefined
 	>(undefined)
-	const [error, setError] = useState([false, ''])
+	const [error, setError] = useState({ err: false, msg: '' })
 
 	const handleCalc = () => {
 		const operatingResult = ARITHMETICAL_OPERATIONS[
@@ -27,7 +28,7 @@ export default function Arithmetic() {
 
 		if (operatingResult.result.length === 0 && operatingResult.msg !== '') {
 			// TODO: Create a toast or something similar?
-			return setError([true, operatingResult.msg])
+			return setError({ err: true, msg: operatingResult.msg })
 		}
 
 		setResultingMatrix(operatingResult.result)
@@ -35,8 +36,8 @@ export default function Arithmetic() {
 
 	useEffect(() => {
 		setResultingMatrix(undefined)
-		setError([false, ''])
-	}, [values, values2, operation])
+		setError({ err: false, msg: '' })
+	}, [values, values2, operation, size, size2])
 
 	return (
 		<>
@@ -46,17 +47,13 @@ export default function Arithmetic() {
 			/>
 			<div className='mx-auto flex items-center justify-center gap-10'>
 				<ScaleButtonsAndComputeButton
-					computeAction={() => handleCalc()}
+					computeAction={handleCalc}
 					handleScalation={handleScalation}
 				/>
 				<ScaleButtonsAndComputeButton handleScalation={handleScalation2} />
 			</div>
 
-			{error[0] && (
-				<div className='text-black my-10 bg-red-400 px-10 py-5 rounded-lg uppercase font-bold w-[70%] text-center'>
-					<h1>{error[1]}</h1>
-				</div>
-			)}
+			{error.err && <Error msg={error.msg} />}
 
 			<div className='flex items-center justify-center gap-2'>
 				<div className='text-center flex items-center justify-center'>
@@ -93,7 +90,7 @@ export default function Arithmetic() {
 							<Matrix
 								size={size}
 								values={resultingMatrix}
-								setValues={setValues2}
+								setValues={setValues}
 								disabled
 							/>
 						</div>

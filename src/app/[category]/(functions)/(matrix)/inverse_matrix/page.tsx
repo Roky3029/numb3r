@@ -1,5 +1,6 @@
 'use client'
 
+import Error from '@/components/Error'
 import Matrix from '@/components/implementations/matrix/Matrix'
 import ScaleButtonsAndComputeButton from '@/components/implementations/matrix/ScaleButtonsAndComputeButton'
 import PageTitle from '@/components/PageTitle'
@@ -12,15 +13,27 @@ export default function InverseMatrix() {
 	useCheckApplication()
 	const [size, values, setValues, handleScalation] = useHandleMatrixParameters()
 	const [inverse, setInverse] = useState<number[][] | undefined>(undefined)
+	const [error, setError] = useState<{ err: boolean; msg: string }>({
+		err: false,
+		msg: ''
+	})
 
 	const handleInverseCalculation = () => {
 		const inv = calculateInverse(values)
 		// TODO: handle the error if the inverse is undefined
+
+		if (inv === undefined)
+			setError({
+				err: true,
+				msg: 'The determinant of the matrix is 0, thus it does not have an inverse matrix'
+			})
+
 		setInverse(inv)
 	}
 
 	useEffect(() => {
 		setInverse(undefined)
+		setError({ err: false, msg: '' })
 	}, [values, size])
 
 	return (
@@ -34,6 +47,8 @@ export default function InverseMatrix() {
 				computeAction={() => handleInverseCalculation()}
 				handleScalation={handleScalation}
 			/>
+
+			{error.err && <Error msg={error.msg} />}
 
 			<div className='flex items-center justify-center gap-10'>
 				<Matrix setValues={setValues} size={size} values={values} />

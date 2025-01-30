@@ -46,7 +46,7 @@ const Matrix: React.FC<MatrixProps> = ({
 				{matrix.map((row, index) => (
 					<div key={index} className='flex items-center justify-center gap-2'>
 						{row.map((el, ind) => (
-							<span key={ind}>{el}</span>
+							<span key={ind}>{el ? el : ''}</span>
 						))}
 					</div>
 				))}
