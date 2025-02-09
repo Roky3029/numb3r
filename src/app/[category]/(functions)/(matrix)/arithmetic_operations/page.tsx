@@ -2,15 +2,13 @@
 
 import Matrix from '@/components/implementations/matrix/Matrix'
 import ScaleButtonsAndComputeButton from '@/components/implementations/matrix/ScaleButtonsAndComputeButton'
-import PageTitle from '@/components/PageTitle'
-import { useCheckApplication } from '@/functions/checkApplication'
+import PageTitle from '@/components/misc/PageTitle'
 import { useHandleMatrixParameters } from '@/hooks/useHandleMatrixParameters'
 import { useEffect, useState } from 'react'
 import { ARITHMETICAL_OPERATIONS } from '@/functions/matrix/arithmeticalOperations'
-import Error from '@/components/Error'
+import Error from '@/components/misc/Error'
 
 export default function Arithmetic() {
-	useCheckApplication()
 	const [size, values, setValues, handleScalation] = useHandleMatrixParameters()
 	const [size2, values2, setValues2, handleScalation2] =
 		useHandleMatrixParameters()

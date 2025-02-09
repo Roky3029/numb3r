@@ -1,5 +1,5 @@
 import { LuMoveDiagonal2 } from 'react-icons/lu'
-import { ICategory } from '../types/app'
+import { ICategory } from '../../types/app'
 import { TbSwitch } from 'react-icons/tb'
 import { PiMathOperations, PiSelectionInverseFill } from 'react-icons/pi'
 
@@ -16,7 +16,7 @@ export const propsApplications: ICategory = {
 			icon: LuMoveDiagonal2
 		},
 		{
-			id: 'amicable',
+			id: 'amicable_numbers',
 			title: 'Amicable numbers',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',

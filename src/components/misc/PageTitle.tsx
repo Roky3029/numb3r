@@ -12,7 +12,7 @@ export default function PageTitle({
 	return (
 		<>
 			<h1
-				className={`text-3xl uppercase font-extrabold shadow-lg py-4 ${additionalClasses}`}
+				className={`text-3xl uppercase font-extrabold shadow-lg text-center py-4 ${additionalClasses}`}
 			>
 				{title}
 			</h1>

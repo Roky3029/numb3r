@@ -7,14 +7,11 @@ import {
 	checkForEmptyRows
 } from '@/functions/matrix/determinant'
 import { useEffect, useState } from 'react'
-import PageTitle from '@/components/PageTitle'
-import { useCheckApplication } from '@/functions/checkApplication'
+import PageTitle from '@/components/misc/PageTitle'
 import { useHandleMatrixParameters } from '@/hooks/useHandleMatrixParameters'
 import ScaleButtonsAndComputeButton from '@/components/implementations/matrix/ScaleButtonsAndComputeButton'
 
 export default function Determinant() {
-	useCheckApplication()
-
 	const [size, values, setValues, handleScalation] = useHandleMatrixParameters()
 	const [determinant, setDeterminant] = useState<number | undefined>(undefined)
 

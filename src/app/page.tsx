@@ -1,6 +1,6 @@
 import Category from '@/components/Category'
 import SubCategory from '@/components/Subcategory'
-import Title from '@/components/Title'
+import Title from '@/components/misc/Title'
 
 import { BsArrowRight } from 'react-icons/bs'
 
@@ -8,10 +8,10 @@ import fs from 'fs/promises'
 import { ICategory } from '@/types/app'
 
 export default async function Home() {
-	const dirContent = await fs.readdir('./src/data/')
+	const dirContent = await fs.readdir('./src/data/apps')
 	const content = await Promise.all(
 		dirContent.map(async f => {
-			const file = await import(`./../data/${f}`)
+			const file = await import(`./../data/apps/${f}`)
 			return Object.values(file).at(0)
 		})
 	)

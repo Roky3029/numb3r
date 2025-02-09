@@ -1,16 +1,13 @@
 'use client'
 
 import Matrix from '@/components/implementations/matrix/Matrix'
-import PageTitle from '@/components/PageTitle'
+import PageTitle from '@/components/misc/PageTitle'
 import { calculateTransposition } from '@/functions/matrix/transposition'
-import { useCheckApplication } from '@/functions/checkApplication'
 import { useEffect, useState } from 'react'
 import ScaleButtonsAndComputeButton from '@/components/implementations/matrix/ScaleButtonsAndComputeButton'
 import { useHandleMatrixParameters } from '@/hooks/useHandleMatrixParameters'
 
 export default function Determinant() {
-	useCheckApplication()
-
 	const [size, values, setValues, handleScalation] = useHandleMatrixParameters()
 	const [newMatrix, setNewMatrix] = useState<number[][]>([])
 

@@ -1,4 +1,4 @@
-import PageTitle from '@/components/PageTitle'
+import PageTitle from '@/components/misc/PageTitle'
 import SubCategory from '@/components/Subcategory'
 import { ICategory } from '@/types/app'
 

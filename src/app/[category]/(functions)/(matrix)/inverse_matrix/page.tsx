@@ -1,16 +1,14 @@
 'use client'
 
-import Error from '@/components/Error'
+import Error from '@/components/misc/Error'
 import Matrix from '@/components/implementations/matrix/Matrix'
 import ScaleButtonsAndComputeButton from '@/components/implementations/matrix/ScaleButtonsAndComputeButton'
-import PageTitle from '@/components/PageTitle'
-import { useCheckApplication } from '@/functions/checkApplication'
+import PageTitle from '@/components/misc/PageTitle'
 import { calculateInverse } from '@/functions/matrix/calculateInverse'
 import { useHandleMatrixParameters } from '@/hooks/useHandleMatrixParameters'
 import { useEffect, useState } from 'react'
 
 export default function InverseMatrix() {
-	useCheckApplication()
 	const [size, values, setValues, handleScalation] = useHandleMatrixParameters()
 	const [inverse, setInverse] = useState<number[][] | undefined>(undefined)
 	const [error, setError] = useState<{ err: boolean; msg: string }>({

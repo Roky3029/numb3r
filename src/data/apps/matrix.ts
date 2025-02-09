@@ -1,5 +1,5 @@
 import { LuMoveDiagonal2 } from 'react-icons/lu'
-import { ICategory } from '../types/app'
+import { ICategory } from '../../types/app'
 import { TbSwitch } from 'react-icons/tb'
 import { PiMathOperations, PiSelectionInverseFill } from 'react-icons/pi'
 
