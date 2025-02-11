@@ -42,6 +42,8 @@ export default async function Home() {
 								)
 							}
 
+							if (index > 3) return
+
 							return (
 								<SubCategory
 									key={app.id}

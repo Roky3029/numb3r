@@ -4,7 +4,7 @@ import { ICategory } from '@/types/app'
 
 const Home = async ({ params }: { params: { category: string } }) => {
 	const { category } = await params
-	const file = await import(`./../../data/${category}`)
+	const file = await import(`./../../data/apps/${category}`)
 	const [data]: ICategory[] = Object.values(file)
 
 	return (

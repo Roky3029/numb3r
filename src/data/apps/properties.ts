@@ -23,15 +23,22 @@ export const propsApplications: ICategory = {
 			icon: TbSwitch
 		},
 		{
-			id: 'power_calculator',
-			title: 'Power calculator',
+			id: 'prime_factorizer',
+			title: 'Prime factorizer',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
 			icon: PiMathOperations
 		},
 		{
-			id: 'prime',
-			title: 'Prime finder',
+			id: 'gcd_and_lcm',
+			title: 'GCD and LCM',
+			description:
+				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
+			icon: PiSelectionInverseFill
+		},
+		{
+			id: 'base_converter',
+			title: 'Base converter',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
 			icon: PiSelectionInverseFill
