@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### NUMB3R 🎲
 
-## Getting Started
+Numb3r is a project developed with the intention to be an useful tool in order for people to handle the reasonment process and Numb3r the computations.
 
-First, run the development server:
+The vast majority of algorithms used in this project are my own implementations, and, although it may not be the most efficient algorithm, it does the work pretty well.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### Tech stack 💻
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project uses a very basic frontend stack:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ReactJS: The main library for building the app.
+- NextJS: Although it is mainly centered on Server Side, I decided to use it because of the facilities it gives when handling routes
+- TailwindCSS: For the main styles of the application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### About the programmer 🧑🏻
 
-## Learn More
+Hey! I'm Miguel, a Computer Engineering student, if you are considering contacting me, please write an email to mjibarb30@gmail.com, or, as an alternative, check my personal README on Github, where you'll find all the necessary information.
 
-To learn more about Next.js, take a look at the following resources:
+[Personal README](https://github.com/Roky3029/Roky3029)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> “Mathematics has beauty and romance. It’s not a boring place to be, the mathematical world. It’s an extraordinary place; it’s worth spending time there. ”
+>
+> > Marcus du Sautoy
