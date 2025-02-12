@@ -9,13 +9,20 @@ import Error from '@/components/misc/Error'
 import { transformIntoBase } from '@/functions/numberMethods/transformIntoBase'
 import { useCheckValidNumberFormat } from '@/hooks/useCheckValidNumberFormat'
 
+const SUBINDEX = {
+	BIN: '2',
+	DEC: '10',
+	HEX: '16',
+	OCT: '8'
+}
+
 export default function Base() {
 	const [value, setValue] = useState<string>('')
 	const [option, setOption] = useState<string>('DEC')
 
 	const [option2, setOption2] = useState<string>('BIN')
 
-	const [result, setResult] = useState<number>(0)
+	const [result, setResult] = useState<number | string>(0)
 	const [err, setErr] = useState('')
 
 	const handleClick = () => {
@@ -34,7 +41,7 @@ export default function Base() {
 		}
 
 		const res = transformIntoBase(value, option, option2)
-		setResult(res as number)
+		setResult(res)
 	}
 
 	useEffect(() => {
@@ -111,7 +118,14 @@ export default function Base() {
 
 			{result !== 0 && value !== '' && (
 				<div className='pt-20'>
-					<p className='text-5xl text-center'>hola</p>
+					<p className='text-5xl text-center'>
+						{value}
+						<sub>{SUBINDEX[option as keyof typeof SUBINDEX]}</sub> ={' '}
+						<span className='font-extrabold'>
+							{result}
+							<sub>{SUBINDEX[option2 as keyof typeof SUBINDEX]}</sub>
+						</span>
+					</p>
 				</div>
 			)}
 		</div>
