@@ -19,7 +19,7 @@ const SubCategory: React.FC<SubCategoryProps> = ({
 
 	return (
 		<Link
-			href={`/${category.toLowerCase()}/${slug}`}
+			href={`/${category.toLowerCase().split(' ').join('_')}/${slug}`}
 			className={`bg-amber-100 text-black px-10 py-5 rounded-lg shadow-lg flex flex-col items-center justify-center gap-3 text-xl transition-all hover:scale-105 ${additionalClasses}`}
 		>
 			<div className='items-center justify-center flex gap-5'>

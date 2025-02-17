@@ -55,7 +55,6 @@ const fromBinaryToHex = (num: number[]) => {
 		else if (digit !== 0) decimal += digit
 	})
 
-	console.log(decimal)
 	return decimal
 }
 

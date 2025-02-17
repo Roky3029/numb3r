@@ -9,18 +9,11 @@ export const propsApplications: ICategory = {
 	icon: TbSwitch,
 	apps: [
 		{
-			id: 'harshad_number',
-			title: 'Harshad number',
+			id: 'base_converter',
+			title: 'Base converter',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
-			icon: LuMoveDiagonal2
-		},
-		{
-			id: 'amicable_numbers',
-			title: 'Amicable numbers',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
-			icon: TbSwitch
+			icon: PiSelectionInverseFill
 		},
 		{
 			id: 'prime_factorizer',
@@ -37,11 +30,18 @@ export const propsApplications: ICategory = {
 			icon: PiSelectionInverseFill
 		},
 		{
-			id: 'base_converter',
-			title: 'Base converter',
+			id: 'harshad_number',
+			title: 'Harshad number',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
-			icon: PiSelectionInverseFill
+			icon: LuMoveDiagonal2
+		},
+		{
+			id: 'amicable_numbers',
+			title: 'Amicable numbers',
+			description:
+				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
+			icon: TbSwitch
 		}
 	]
 }

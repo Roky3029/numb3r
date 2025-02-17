@@ -23,7 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${rubik.variable} antialiased flex flex-col items-center min-h-screen`}
+				className={`${rubik.variable} antialiased flex flex-col items-center min-h-screen `}
 			>
 				<Header />
 

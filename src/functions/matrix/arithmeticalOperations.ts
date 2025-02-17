@@ -114,8 +114,6 @@ const division = (mat1: number[][], mat2: number[][]) => {
 
 	const inverseOfMat2 = calculateInverse(mat2, true)
 
-	console.log('does this exec?')
-
 	if (inverseOfMat2 === undefined)
 		return {
 			result: [],

@@ -15,6 +15,7 @@ export default async function Home() {
 			return Object.values(file).at(0)
 		})
 	)
+	content.push(content.shift())
 
 	return (
 		<div className='flex flex-col items-center h-full pt-20 mb-20'>
