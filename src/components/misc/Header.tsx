@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 //////////////////// ICONS ////////////////////
-import { BsPatchQuestion } from 'react-icons/bs'
+// import { BsPatchQuestion } from 'react-icons/bs'
 ///////////////////////////////////////////////
 
 const Header = () => {
@@ -17,10 +17,11 @@ const Header = () => {
 			</Link>
 
 			<nav className='flex items-center justify-center gap-10'>
-				<div className='flex items-center justify-center gap-2'>DARK MODE</div>
-				<div className='flex items-center justify-center gap-2'>
-					<BsPatchQuestion />
-				</div>
+				{/* <div className='flex items-center justify-center gap-2'>DARK MODE</div> */}
+				{/* <div className='flex items-center justify-center gap-2'> */}
+				{/* <BsPatchQuestion /> */}
+				{/* </div> */}
+				<p className='text-sm  text-slate-700'>Miguel R. @MikiDev</p>
 			</nav>
 		</header>
 	)

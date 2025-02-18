@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const Title = () => {
@@ -22,10 +21,7 @@ const Title = () => {
 				From currency conversion to mathematical operations, in Numb3r you will
 				find all the tools you need when operating with numbers. Want to find a
 				determinant? Got it. Want to find how much does something cost in your
-				own country&apos;s currency? Once again, got it. Why not start checking{' '}
-				<Link href='/categories' className='text-slate-300 underline'>
-					our categories?
-				</Link>
+				own country&apos;s currency? Once again, got it.
 			</p>
 		</>
 	)

@@ -20,13 +20,25 @@ const Footer = () => {
 			</div>
 
 			<nav className='flex items-center justify-center gap-10'>
-				<Link href='#' className='transition-all hover:scale-110'>
+				<Link
+					href='https://x.com/miguel_rbn'
+					target='_blank'
+					className='transition-all hover:scale-110'
+				>
 					<FaXTwitter size={30} />
 				</Link>
-				<Link href='#' className='transition-all hover:scale-110'>
+				<Link
+					href='https://miguelr.vercel.app/'
+					target='_blank'
+					className='transition-all hover:scale-110'
+				>
 					<MdWebhook size={30} />
 				</Link>
-				<Link href='#' className='transition-all hover:scale-110'>
+				<Link
+					href='https://github.com/Roky3029/Roky3029'
+					target='_blank'
+					className='transition-all hover:scale-110'
+				>
 					<FaGithub size={30} />
 				</Link>
 			</nav>

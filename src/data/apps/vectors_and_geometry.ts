@@ -1,40 +1,34 @@
-import { BsPatchQuestion } from 'react-icons/bs'
-import { PiMatrixLogoDuotone, PiSupersetProperOfFill } from 'react-icons/pi'
-import { TbPigMoney } from 'react-icons/tb'
 import { ICategory } from '../../types/app'
+import { PiVectorThreeFill } from 'react-icons/pi'
+import { MdMultipleStop } from 'react-icons/md'
+import { TbAngle } from 'react-icons/tb'
+import { FaWeightHanging } from 'react-icons/fa6'
 
 export const vectors_geometryApplications: ICategory = {
 	name: 'Vectors and geometry',
 	color: 'bg-emerald-500',
-	icon: TbPigMoney,
+	icon: PiVectorThreeFill,
 	apps: [
 		{
 			id: 'products',
 			title: 'Products',
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
-			icon: PiSupersetProperOfFill
+				'Calculate the dot product, the cross or the mixed product just by selecting one of them and introducing the data.',
+			icon: MdMultipleStop
 		},
 		{
 			id: 'angle_between_vectors',
 			title: 'Angle between vectors',
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
-			icon: TbPigMoney
+				'Calculate (in degrees) the angle between two vectors in a three-dimensional space',
+			icon: TbAngle
 		},
 		{
 			id: 'magnitude',
 			title: 'Magnitude',
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
-			icon: PiMatrixLogoDuotone
-		},
-		{
-			id: 'linear_dependence_checker',
-			title: 'Linear dependence checker',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam autem quaerat asperiores quisquam rerum atque.',
-			icon: BsPatchQuestion
+				"Calculates the total length of a vector given it's three coordinates",
+			icon: FaWeightHanging
 		}
 	]
 }

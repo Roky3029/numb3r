@@ -9,7 +9,7 @@ import { magnitude } from '@/functions/vectors_geometry/magnitude'
 import { useEffect, useState } from 'react'
 
 export default function Magnitude() {
-	const [u, setU] = useState<number[]>([4, 2, 7])
+	const [u, setU] = useState<number[]>([NaN, NaN, NaN])
 
 	const [err, setErr] = useState(false)
 	const [result, setResult] = useState<number | string>(NaN)
