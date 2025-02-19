@@ -6,7 +6,7 @@ import { MdWebhook } from 'react-icons/md'
 
 const Footer = () => {
 	return (
-		<footer className='border-t-4 border-zinc-600 w-full px-32 py-10 mt-auto grid grid-cols-2 place-items-center'>
+		<footer className=' border-t-4 border-zinc-600 w-full px-10 py-10 mt-auto grid grid-cols-1 md:grid-cols-2 place-items-center'>
 			<div className='flex items-center justify-center gap-10'>
 				<img
 					src='https://avatars.githubusercontent.com/u/75387461?v=4'
@@ -19,7 +19,7 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<nav className='flex items-center justify-center gap-10'>
+			<nav className='flex items-center justify-center gap-10 pt-10 md:pt-0'>
 				<Link
 					href='https://x.com/miguel_rbn'
 					target='_blank'

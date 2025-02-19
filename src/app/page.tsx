@@ -18,10 +18,10 @@ export default async function Home() {
 	content.push(content.shift())
 
 	return (
-		<div className='flex flex-col items-center h-full pt-20 mb-20'>
+		<div className='flex flex-col items-center justify-center pt-20 mb-20'>
 			<Title />
 
-			<div className='flex flex-col justify-between w-full mx-20 px-20 pt-20 gap-20'>
+			<div className='flex flex-col w-full px-10 md:px-20 pt-20 gap-20'>
 				{(content as ICategory[]).map(category => (
 					<Category
 						color={category.color}

@@ -12,7 +12,7 @@ const rubik = Rubik({
 export const metadata: Metadata = {
 	title: 'Numb3r',
 	description:
-		'Need to convert some currencies? Or maybe do some calculations on a matrix? In Numb3r you will find everything you need!'
+		'Need to compute vectorial operations? Or maybe do some calculations on a matrix? In Numb3r you will find everything you need!'
 }
 
 export default function RootLayout({
@@ -23,7 +23,8 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${rubik.variable} antialiased flex flex-col items-center min-h-screen `}
+				className={`${rubik.variable} antialiased flex flex-col items-center min-h-screen w-full overflow-x-hidden max-w-screen`}
+				// className={`${rubik.variable} antialiased`}
 			>
 				<Header />
 

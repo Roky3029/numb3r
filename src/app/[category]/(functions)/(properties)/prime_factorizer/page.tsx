@@ -28,7 +28,7 @@ export default function Amicable() {
 	}, [value])
 
 	return (
-		<div className='flex flex-col items-center justify-center'>
+		<div className='flex flex-col items-center justify-center max-w-screen w-full'>
 			<PageTitle
 				title='Prime factorizer'
 				subtitle='This app will help you decompose a number into a set of prime numbers. You can find if the number is prime itself too!'
@@ -36,7 +36,7 @@ export default function Amicable() {
 
 			{err.length > 0 && <Error msg={err} />}
 
-			<div className='flex items-center justify-center gap-10 pt-20'>
+			<div className='flex items-center justify-center flex-col md:flex-row gap-10 pt-20'>
 				<Input
 					label='prime_factorizer'
 					placeholder='Input number'
@@ -49,7 +49,7 @@ export default function Amicable() {
 			</div>
 
 			{result.length === 1 && value !== '' && (
-				<div className='pt-20'>
+				<div className='pt-20 px-5'>
 					<p className='text-2xl text-center'>
 						The number {value} is a prime number!
 					</p>
@@ -57,7 +57,7 @@ export default function Amicable() {
 			)}
 
 			{result.length > 1 && value !== '' && (
-				<div className='pt-20'>
+				<div className='pt-20 px-5'>
 					<p className='text-2xl text-center'>
 						The number {value} is decomposed into:{' '}
 					</p>

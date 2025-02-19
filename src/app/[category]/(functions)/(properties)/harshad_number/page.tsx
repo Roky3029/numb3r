@@ -28,13 +28,13 @@ export default function Harshad() {
 		})
 	}, [value])
 	return (
-		<div>
+		<div className='w-full max-w-screen'>
 			<PageTitle
 				title='Harshad number'
 				subtitle='Want to know if a number is a Harshad number? Just write it and find out! (for more info about Harshad numbers see "About")'
 			/>
 
-			<div className='flex items-center justify-center gap-10 pt-20'>
+			<div className='flex items-center justify-center flex-col md:flex-row gap-10 pt-20'>
 				<Input
 					label='Harhsad number'
 					placeholder='Input a number'
@@ -47,7 +47,7 @@ export default function Harshad() {
 			</div>
 
 			{result.isThereResult && value !== '' && (
-				<div className='pt-20'>
+				<div className='py-20'>
 					<p className='text-2xl text-center'>
 						{result.isCorrect ? '✅' : '❌'} The number {value} is{' '}
 						{result.isCorrect ? '' : 'not'} a Harshad Number

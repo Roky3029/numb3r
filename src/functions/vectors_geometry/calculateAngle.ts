@@ -9,7 +9,7 @@ function convertToDms(dd: number) {
 	let sec = frac * 3600 - min * 60
 	// Round it to 2 decimal points.
 	sec = Math.round(sec * 100) / 100
-	return deg + '° ' + min + "' " + sec + '"'
+	return deg + '° ' + min + "' " + (Number.isNaN(sec) ? 0 : sec) + '"'
 }
 
 export const calculateAngle = (u: number[], v: number[]) => {

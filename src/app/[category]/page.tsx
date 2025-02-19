@@ -10,15 +10,11 @@ const Home = async ({ params }: { params: { category: string } }) => {
 	return (
 		<>
 			<div className='grid place-content-center'>
-				<div className='flex items-center justify-center gap-5'>
+				<div className='flex items-center justify-center gap-5 w-full'>
 					<PageTitle title={data.name} />
-					<span>
-						{' '}
-						<data.icon size={30} />{' '}
-					</span>
 				</div>
 
-				<div className='grid grid-cols-3 place-content-center w-full px-32 gap-10 my-10'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-center w-full px-10 md:px-20 lg:px-32 gap-10 my-10'>
 					{data.apps.map(app => (
 						<SubCategory
 							description={app.description}

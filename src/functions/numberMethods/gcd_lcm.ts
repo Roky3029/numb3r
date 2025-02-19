@@ -1,25 +1,29 @@
-const divisors = (num: number) => {
-	const divs = []
-	for (let i = 2; i <= num; i++) {
-		if (num % i === 0) divs.push(i)
-	}
+// const divisors = (num: number) => {
+// 	const divs = []
+// 	for (let i = 2; i <= num; i++) {
+// 		if (num % i === 0) divs.push(i)
+// 	}
 
-	return divs
-}
+// 	return divs
+// }
 
-const gcd = (num1: number, num2: number) => {
-	const divs1 = divisors(num1)
-	const divs2 = divisors(num2)
+// const gcd = (num1: number, num2: number) => {
+// 	const divs1 = divisors(num1)
+// 	const divs2 = divisors(num2)
 
-	const coincidences = []
+// 	const coincidences = []
 
-	for (let i = 0; i < divs1.length; i++) {
-		for (let j = 0; j < divs2.length; j++) {
-			if (divs1[i] === divs2[j]) coincidences.push(divs1[i])
-		}
-	}
+// 	for (let i = 0; i < divs1.length; i++) {
+// 		for (let j = 0; j < divs2.length; j++) {
+// 			if (divs1[i] === divs2[j]) coincidences.push(divs1[i])
+// 		}
+// 	}
 
-	return coincidences[coincidences.length - 1]
+// 	return coincidences[coincidences.length - 1]
+// }
+
+const gcd = (a: number, b: number): number => {
+	return b === 0 ? a : gcd(b, a % b)
 }
 
 const lcm = (num1: number, num2: number) => {

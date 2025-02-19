@@ -9,7 +9,7 @@ import { magnitude } from '@/functions/vectors_geometry/magnitude'
 import { useEffect, useState } from 'react'
 
 export default function Magnitude() {
-	const [u, setU] = useState<number[]>([NaN, NaN, NaN])
+	const [u, setU] = useState<number[]>([3, 3, 3])
 
 	const [err, setErr] = useState(false)
 	const [result, setResult] = useState<number | string>(NaN)
@@ -34,7 +34,7 @@ export default function Magnitude() {
 			/>
 
 			{err && <Error msg='There is an error on data input' />}
-			<div className='w-full grid grid-cols-2 place-content-center gap-10 px-10 h-full'>
+			<div className='w-full grid grid-cols-1 place-content-center gap-10 px-10 h-full'>
 				<div className='h-full mx-20 gap-20 py-20'>
 					<Vector vectorName='u' state={{ variable: u, setter: setU }} />
 				</div>

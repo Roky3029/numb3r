@@ -18,9 +18,9 @@ const OPERATION_STATEMENT = {
 }
 
 export default function Products() {
-	const [u, setU] = useState<number[]>([NaN, NaN, NaN])
-	const [v, setV] = useState<number[]>([NaN, NaN, NaN])
-	const [w, setW] = useState<number[]>([NaN, NaN, NaN])
+	const [u, setU] = useState<number[]>([4, 4, 4])
+	const [v, setV] = useState<number[]>([4, 4, 4])
+	const [w, setW] = useState<number[]>([4, 4, 4])
 
 	const [product, setProduct] = useState<string>('DOT')
 
@@ -45,21 +45,21 @@ export default function Products() {
 	}, [u, v, w, product])
 
 	return (
-		<div className='flex items-center justify-center flex-col h-full'>
+		<div className='flex items-center justify-center flex-col h-full w-full max-w-screen'>
 			<PageTitle
 				title='Vectorial products'
 				subtitle='This is the place if you want to calculate either the dot, cross or mixed product of some vectors in 2D or 3D'
 			/>
 
 			{err && <Error msg='There is an error on data input' />}
-			<div className='grid w-full grid-cols-[1fr_2fr] px-10 h-full'>
-				<div className='flex items-center justify-center h-full mx-20 gap-20 py-20'>
+			<div className='grid w-full px-10 h-full grid-cols-1'>
+				<div className='flex items-center justify-center h-full flex-col md:flex-row mx-20 gap-20 py-20'>
 					<Vector vectorName='u' state={{ variable: u, setter: setU }} />
 					<Vector vectorName='v' state={{ variable: v, setter: setV }} />
 					<Vector vectorName='w' state={{ variable: w, setter: setW }} />
 				</div>
 				<div className='grid grid-rows-2 place-content-center py-10'>
-					<div className='flex items-center justify-center gap-10'>
+					<div className='flex items-center justify-center gap-10 flex-col md:flex-row pb-10'>
 						<ProductSelect setter={setProduct} value={product} />
 						<Button text='Calculate' fn={handleCalculations} />
 					</div>

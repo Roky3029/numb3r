@@ -22,6 +22,7 @@ export default function CommonNumbers() {
 			)
 
 		const res = OPTIONS[option as keyof typeof OPTIONS](+value, +value2)
+		console.log(res)
 		setResult(res as number)
 	}
 
@@ -31,7 +32,7 @@ export default function CommonNumbers() {
 	}, [value, value2, option])
 
 	return (
-		<div className='flex flex-col items-center justify-center'>
+		<div className='flex flex-col items-center justify-center w-full max-w-screen'>
 			<PageTitle
 				title='GCD & LCM'
 				subtitle='The pillars of arithmetic. Find the GCD (Greatest Common Divisor) and/or the LCM (Least Common Multiple) of two numbers'
@@ -39,7 +40,7 @@ export default function CommonNumbers() {
 
 			{err.length > 0 && <Error msg={err} />}
 
-			<div className='flex items-center justify-center gap-10 pt-20'>
+			<div className='flex items-center justify-center gap-10 pt-20 flex-col xl:flex-row pb-5'>
 				<Input
 					label='gcd'
 					placeholder='Input number 1'
@@ -74,8 +75,8 @@ export default function CommonNumbers() {
 			</div>
 
 			{result !== 0 && value !== '' && value2 !== '' && (
-				<div className='pt-20'>
-					<p className='text-5xl text-center'>
+				<div className='pt-20 pb-10'>
+					<p className='text-2xl md:text-5xl text-center'>
 						{option.toUpperCase()}({value}, {value2}) = {result}
 					</p>
 				</div>

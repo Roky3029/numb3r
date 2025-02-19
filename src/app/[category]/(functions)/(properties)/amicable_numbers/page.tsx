@@ -30,13 +30,13 @@ export default function Amicable() {
 	}, [value, value2])
 
 	return (
-		<div>
+		<div className='w-full max-w-screen'>
 			<PageTitle
 				title='Amicable numbers'
 				subtitle='We all love friendship. What about finding if two numbers get along well? Find out if they are amicable'
 			/>
 
-			<div className='flex items-center justify-center gap-10 pt-20'>
+			<div className='flex items-center justify-center gap-10 pt-20 flex-col lg:flex-row pb-5'>
 				<Input
 					label='amicable_numbers'
 					placeholder='Input number 1'
@@ -57,7 +57,7 @@ export default function Amicable() {
 			</div>
 
 			{result.isThereResult && value !== '' && (
-				<div className='pt-20'>
+				<div className='py-20'>
 					<p className='text-2xl text-center'>
 						{result.isCorrect ? '✅' : '❌'} Numbers {value} and {value2} are{' '}
 						{result.isCorrect ? '' : 'not'} amicable

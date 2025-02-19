@@ -13,12 +13,12 @@ const Error404 = () => {
 				width={500}
 				height={500}
 			/>
-			<p>
+			<p className='text-center text-sm md:text-xl'>
 				It seems that the link you were trying to access{' '}
 				<span className='text-4xl'>∄</span>
 			</p>
 
-			<small>
+			<small className='pb-10'>
 				Why not return to the{' '}
 				<Link
 					href='/'

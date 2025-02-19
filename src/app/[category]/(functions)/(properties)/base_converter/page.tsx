@@ -50,7 +50,7 @@ export default function Base() {
 	}, [value, option, option2])
 
 	return (
-		<div className='flex flex-col items-center justify-center'>
+		<div className='flex flex-col items-center justify-center w-full max-w-screen'>
 			<PageTitle
 				title='Base converter'
 				subtitle='Deep dive into the basic data representations in computer science. You will be able to transform a number in your desired format into any other common data format in computer science'
@@ -59,7 +59,7 @@ export default function Base() {
 			{err.length > 0 && <Error msg={err} />}
 
 			<div className='flex items-center flex-col justify-center'>
-				<div className='flex items-center justify-center gap-10 pt-20'>
+				<div className='flex items-center justify-center gap-10 pt-20 flex-col lg:flex-row w-full'>
 					<Input
 						label='n1'
 						placeholder='Input number'
@@ -89,7 +89,7 @@ export default function Base() {
 					</select>
 				</div>
 
-				<div className='flex items-center justify-between w-full gap-10 py-5'>
+				<div className='flex items-center justify-center w-full gap-10 py-5 flex-col md:flex-row'>
 					<div className='flex items-center justify-center gap-4'>
 						<p className='text-3xl'>Convert into</p>
 						<select
@@ -112,12 +112,12 @@ export default function Base() {
 							</option>
 						</select>
 					</div>
-					<Button fn={handleClick} />
 				</div>
+				<Button fn={handleClick} />
 			</div>
 
 			{result !== 0 && value !== '' && (
-				<div className='pt-20'>
+				<div className='py-20'>
 					<p className='text-5xl text-center'>
 						{value}
 						<sub>{SUBINDEX[option as keyof typeof SUBINDEX]}</sub> ={' '}
