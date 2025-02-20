@@ -1,9 +1,18 @@
 import PageTitle from '@/components/misc/PageTitle'
 import SubCategory from '@/components/Subcategory'
 import { ICategory } from '@/types/app'
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
 
-const Home = async ({ params }: { params: { category: string } }) => {
-	const { category } = await params
+const Home = async () => {
+	const headersList = headers()
+	const URL = (await headersList).get('referer') || ''
+
+	if (URL.length < 1) return redirect('/404')
+
+	const category = URL.split('/')[3]
+	// read the custom x-url header
+	// const { category } = await params
 	const file = await import(`./../../data/apps/${category}`)
 	const [data]: ICategory[] = Object.values(file)
 
