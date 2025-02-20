@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { Result } from '@/types/result'
 import { isAmicable } from '@/functions/numberMethods/amicable'
 // import About from '@/components/implementations/properties/About'
-import { ABOUT } from '@/data/about'
+// import { ABOUT } from '@/data/about'
 
 export default function Amicable() {
 	const [value, setValue] = useState<string>('')
@@ -69,7 +69,7 @@ export default function Amicable() {
 				</div>
 			)}
 
-			<About title={ABOUT.amicable.title} about={ABOUT.amicable.description} />
+			{/* <About title={ABOUT.amicable.title} about={ABOUT.amicable.description} /> */}
 		</div>
 	)
 }

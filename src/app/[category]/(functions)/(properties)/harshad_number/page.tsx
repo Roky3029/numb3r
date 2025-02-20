@@ -4,7 +4,7 @@
 import Button from '@/components/implementations/properties/Button'
 import Input from '@/components/implementations/properties/Input'
 import PageTitle from '@/components/misc/PageTitle'
-import { ABOUT } from '@/data/about'
+// import { ABOUT } from '@/data/about'
 import { isHarshad } from '@/functions/numberMethods/harshad'
 import { Result } from '@/types/result'
 import { useEffect, useState } from 'react'
@@ -55,10 +55,10 @@ export default function Harshad() {
 				</div>
 			)}
 
-			<About
+			{/* <About
 				title={ABOUT.harshad_number.title}
 				about={ABOUT.harshad_number.description}
-			/>
+			/> */}
 		</div>
 	)
 }
