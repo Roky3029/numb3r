@@ -18,9 +18,9 @@ const OPERATION_STATEMENT = {
 }
 
 export default function Products() {
-	const [u, setU] = useState<number[]>([4, 4, 4])
-	const [v, setV] = useState<number[]>([4, 4, 4])
-	const [w, setW] = useState<number[]>([4, 4, 4])
+	const [u, setU] = useState<number[]>([NaN, NaN, NaN])
+	const [v, setV] = useState<number[]>([NaN, NaN, NaN])
+	const [w, setW] = useState<number[]>([NaN, NaN, NaN])
 
 	const [product, setProduct] = useState<string>('DOT')
 

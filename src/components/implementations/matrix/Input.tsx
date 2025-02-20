@@ -27,7 +27,7 @@ const Input: React.FC<InputProps> = ({
 		<>
 			<input
 				type={'text'}
-				className='border-none ring-2 px-3 py-1 w-20 h-20 text-xl text-black text-center rounded-md disabled:text-white disabled:placeholder:text-white'
+				className='border-none ring-2 px-3 py-1 w-14 h-14 md:w-20 md:h-20 text-sm md:text-xl text-black text-center rounded-md disabled:text-white disabled:placeholder:text-white'
 				value={values[iValue][jValue].toString().replace(/(.+?)\/1\b/g, '$1')}
 				placeholder={values[iValue][jValue] !== 0 ? '' : '0'}
 				onChange={e => handleChange(e)}

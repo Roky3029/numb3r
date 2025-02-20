@@ -9,8 +9,8 @@ import { checkNonNaNVector } from '@/functions/vectors_geometry/checkValidInputs
 import { useEffect, useState } from 'react'
 
 export default function Angle() {
-	const [u, setU] = useState<number[]>([4, 4, 4])
-	const [v, setV] = useState<number[]>([4, 4, 4])
+	const [u, setU] = useState<number[]>([NaN, NaN, NaN])
+	const [v, setV] = useState<number[]>([NaN, NaN, NaN])
 
 	const [err, setErr] = useState(false)
 	const [result, setResult] = useState<number | string>(NaN)

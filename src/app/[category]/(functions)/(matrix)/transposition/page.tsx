@@ -21,7 +21,7 @@ export default function Determinant() {
 	}, [values])
 
 	return (
-		<>
+		<div className='w-full max-w-screen'>
 			<PageTitle
 				title='Transposition'
 				subtitle='Given a MxN size matrix, convert it to its transposed NxM matrix'
@@ -32,7 +32,7 @@ export default function Determinant() {
 				handleScalation={handleScalation}
 			/>
 
-			<div className='flex items-center justify-center gap-10'>
+			<div className='flex items-center justify-center gap-10 py-10 flex-col md:flex-row'>
 				<div className='text-center flex items-center justify-center'>
 					<Matrix size={size} values={values} setValues={setValues} />
 				</div>
@@ -54,6 +54,6 @@ export default function Determinant() {
 					</>
 				)}
 			</div>
-		</>
+		</div>
 	)
 }

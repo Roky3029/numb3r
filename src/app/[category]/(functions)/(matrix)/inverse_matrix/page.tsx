@@ -18,8 +18,6 @@ export default function InverseMatrix() {
 
 	const handleInverseCalculation = () => {
 		const inv = calculateInverse(values)
-		// TODO: handle the error if the inverse is undefined
-
 		if (inv === undefined)
 			setError({
 				err: true,
@@ -35,7 +33,7 @@ export default function InverseMatrix() {
 	}, [values, size])
 
 	return (
-		<>
+		<div className='w-full max-w-screen flex items-center justify-center flex-col'>
 			<PageTitle
 				title='Inverse matrix'
 				subtitle='Find the matrix that gives the identity matrix when multiplied by the inputted one!'
@@ -48,7 +46,7 @@ export default function InverseMatrix() {
 
 			{error.err && <Error msg={error.msg} />}
 
-			<div className='flex items-center justify-center gap-10'>
+			<div className='flex items-center justify-center gap-10 py-5 flex-col md:flex-row'>
 				<Matrix setValues={setValues} size={size} values={values} />
 
 				{inverse && (
@@ -63,6 +61,6 @@ export default function InverseMatrix() {
 					</>
 				)}
 			</div>
-		</>
+		</div>
 	)
 }

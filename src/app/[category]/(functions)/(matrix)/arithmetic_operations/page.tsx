@@ -38,22 +38,26 @@ export default function Arithmetic() {
 	}, [values, values2, operation, size, size2])
 
 	return (
-		<>
+		<div className='w-full max-w-screen flex items-center justify-center flex-col'>
 			<PageTitle
-				title='Arithmetic matricial operations'
+				title='Matrix arithmetic'
 				subtitle='Want to add, substract, multiply or divide matrices? You are on the right spot!'
 			/>
-			<div className='mx-auto flex items-center justify-center gap-10'>
+			<div className='mx-auto flex items-center justify-center gap-2 md:gap-10 flex-col'>
 				<ScaleButtonsAndComputeButton
 					computeAction={handleCalc}
 					handleScalation={handleScalation}
+					addMatrixID='M1'
 				/>
-				<ScaleButtonsAndComputeButton handleScalation={handleScalation2} />
+				<ScaleButtonsAndComputeButton
+					handleScalation={handleScalation2}
+					addMatrixID='M2'
+				/>
 			</div>
 
 			{error.err && <Error msg={error.msg} />}
 
-			<div className='flex items-center justify-center gap-2'>
+			<div className='flex items-center justify-center gap-5 md:gap-2 flex-col py-4'>
 				<div className='text-center flex items-center justify-center'>
 					<Matrix size={size} values={values} setValues={setValues} />
 				</div>
@@ -95,6 +99,6 @@ export default function Arithmetic() {
 					</>
 				)}
 			</div>
-		</>
+		</div>
 	)
 }

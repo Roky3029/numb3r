@@ -30,7 +30,7 @@ export default function Determinant() {
 	}
 
 	return (
-		<>
+		<div className='w-full max-w-screen'>
 			<PageTitle
 				title='Matrix determinant'
 				subtitle='Calculate a matrix determinant of a matrix with a MxM size'
@@ -41,13 +41,13 @@ export default function Determinant() {
 				handleScalation={handleScalation}
 			/>
 
-			<div className='text-center flex items-center justify-center'>
+			<div className='text-center flex items-center justify-center flex-col md:flex-row py-4 gap-4'>
 				<Matrix size={size} values={values} setValues={setValues} usePipes />
 
 				{determinant !== undefined && (
 					<span className='text-4xl font-semibold'>= {determinant}</span>
 				)}
 			</div>
-		</>
+		</div>
 	)
 }

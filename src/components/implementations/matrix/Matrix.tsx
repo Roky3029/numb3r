@@ -16,12 +16,6 @@ const Matrix: React.FC<MatrixProps> = ({
 	disabled,
 	usePipes
 }) => {
-	// const rows = [
-	// 	[1, 1, 1],
-	// 	[2, 2, 2],
-	// 	[3, 3, 3]
-	// ]
-
 	const matrix = []
 	for (let i = 0; i < size; i++) {
 		matrix.push(new Array(size))
@@ -41,7 +35,9 @@ const Matrix: React.FC<MatrixProps> = ({
 
 	return (
 		<div className='flex items-center justify-center gap-3'>
-			<p className={`${PARENTHESIS_SIZES[size - 2]}`}>{usePipes ? '|' : '('}</p>
+			<p className={`${PARENTHESIS_SIZES[size - 2]} hidden md:block`}>
+				{usePipes ? '|' : '('}
+			</p>
 			<div className='flex flex-col gap-3 items-center justify-center'>
 				{matrix.map((row, index) => (
 					<div key={index} className='flex items-center justify-center gap-2'>
@@ -51,7 +47,9 @@ const Matrix: React.FC<MatrixProps> = ({
 					</div>
 				))}
 			</div>
-			<p className={`${PARENTHESIS_SIZES[size - 2]}`}>{usePipes ? '|' : ')'}</p>
+			<p className={`${PARENTHESIS_SIZES[size - 2]} hidden md:block`}>
+				{usePipes ? '|' : ')'}
+			</p>
 		</div>
 	)
 }

@@ -11,9 +11,9 @@ type handler = [
 export const useHandleMatrixParameters = (): handler => {
 	const [size, setSize] = useState<number>(3)
 	const [values, setValues] = useState<number[][]>([
-		[1, 2, 3],
-		[1, 2, 3],
-		[1, 2, 3]
+		[0, 0, 0],
+		[0, 0, 0],
+		[0, 0, 0]
 	])
 
 	const handleScalation = (scaling: string) => {
