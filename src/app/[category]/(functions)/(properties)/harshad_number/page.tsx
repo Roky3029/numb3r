@@ -1,6 +1,6 @@
 'use client'
 
-import About from '@/components/implementations/properties/About'
+// import About from '@/components/implementations/properties/About'
 import Button from '@/components/implementations/properties/Button'
 import Input from '@/components/implementations/properties/Input'
 import PageTitle from '@/components/misc/PageTitle'

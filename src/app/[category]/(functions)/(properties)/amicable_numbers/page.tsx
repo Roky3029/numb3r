@@ -5,7 +5,7 @@ import Input from '@/components/implementations/properties/Input'
 import { useEffect, useState } from 'react'
 import { Result } from '@/types/result'
 import { isAmicable } from '@/functions/numberMethods/amicable'
-import About from '@/components/implementations/properties/About'
+// import About from '@/components/implementations/properties/About'
 import { ABOUT } from '@/data/about'
 import Button from '@/components/implementations/properties/Button'
 
