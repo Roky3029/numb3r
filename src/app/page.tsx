@@ -2,7 +2,7 @@ import Category from '@/components/Category'
 import SubCategory from '@/components/Subcategory'
 import Title from '@/components/misc/Title'
 
-import { BsArrowRight } from 'react-icons/bs'
+// import { BsArrowRight } from 'react-icons/bs'
 
 import fs from 'fs/promises'
 import { ICategory } from '@/types/app'
@@ -29,21 +29,19 @@ export default async function Home() {
 						icon={<category.icon />}
 						key={category.name}
 					>
-						{category.apps.map((app, index) => {
-							if (index === 3) {
-								return (
-									<SubCategory
-										key='See More'
-										title=''
-										description={`Don't find what you're looking for? Check out the rest of the ${category.name.toLowerCase()} apps`}
-										icon={<BsArrowRight />}
-										additionalClasses='opacity-80 scale-90 hover:scale-100'
-										category={category.name}
-									/>
-								)
-							}
-
-							if (index > 3) return
+						{category.apps.map(app => {
+							// if (index === 3) {
+							// 	return (
+							// 		<SubCategory
+							// 			key='See More'
+							// 			title=''
+							// 			description={`Don't find what you're looking for? Check out the rest of the ${category.name.toLowerCase()} apps`}
+							// 			icon={<BsArrowRight />}
+							// 			additionalClasses='opacity-80 scale-90 hover:scale-100'
+							// 			category={category.name}
+							// 		/>
+							// 	)
+							// }
 
 							return (
 								<SubCategory

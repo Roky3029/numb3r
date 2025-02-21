@@ -1,36 +1,31 @@
-import PageTitle from '@/components/misc/PageTitle'
-import SubCategory from '@/components/Subcategory'
-import { ICategory } from '@/types/app'
-import { redirect } from 'next/navigation'
+import Error404 from '@/components/misc/Error404'
+// import PageTitle from '@/components/misc/PageTitle'
+// import SubCategory from '@/components/Subcategory'
+// import { ICategory } from '@/types/app'
+// import { redirect } from 'next/navigation'
 
 interface PageProps {
 	params: Promise<{ category: string }>
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Home = async ({ params }: PageProps) => {
-	// const headersList = await headers()
-	// const URL = headersList.get('referer') || ''
-	const { category } = await params
-
-	// const category = URL.split('/')[3]
-	// read the custom x-url header
 	// const { category } = await params
-	const linkToDataFile = `./../../data/apps/${category}`
-	let file
-	try {
-		file = await import(linkToDataFile)
-		console.log(file)
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	} catch (error) {
-		// console.log('BURROOOOOO')
 
-		return redirect('/404')
-	}
-	const [data]: ICategory[] = Object.values(file)
+	// const linkToDataFile = `./../../data/apps/${category}`
+	// let file
+	// try {
+	// 	file = await import(linkToDataFile)
+	// 	console.log(file)
+	// 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	// } catch (error) {
+	// 	return redirect('/404')
+	// }
+	// const [data]: ICategory[] = Object.values(file)
 
 	return (
 		<>
-			<div className='grid place-content-center'>
+			{/* <div className='grid place-content-center'>
 				<div className='flex items-center justify-center gap-5 w-full'>
 					<PageTitle title={data.name} />
 				</div>
@@ -47,7 +42,8 @@ const Home = async ({ params }: PageProps) => {
 						/>
 					))}
 				</div>
-			</div>
+			</div> */}
+			<Error404 />
 		</>
 	)
 }
