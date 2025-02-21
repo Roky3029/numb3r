@@ -1,19 +1,31 @@
 import PageTitle from '@/components/misc/PageTitle'
 import SubCategory from '@/components/Subcategory'
 import { ICategory } from '@/types/app'
-import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-const Home = async () => {
-	const headersList = headers()
-	const URL = (await headersList).get('referer') || ''
+interface PageProps {
+	params: Promise<{ category: string }>
+}
 
-	if (URL.length < 1) return redirect('/404')
+const Home = async ({ params }: PageProps) => {
+	// const headersList = await headers()
+	// const URL = headersList.get('referer') || ''
+	const { category } = await params
 
-	const category = URL.split('/')[3]
+	// const category = URL.split('/')[3]
 	// read the custom x-url header
 	// const { category } = await params
-	const file = await import(`./../../data/apps/${category}`)
+	const linkToDataFile = `./../../data/apps/${category}`
+	let file
+	try {
+		file = await import(linkToDataFile)
+		console.log(file)
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	} catch (error) {
+		// console.log('BURROOOOOO')
+
+		return redirect('/404')
+	}
 	const [data]: ICategory[] = Object.values(file)
 
 	return (
